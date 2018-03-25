@@ -1,13 +1,18 @@
 package org.ashish.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
+//@Entity(name="USER_DETAILS")
+@Entity(name="USER_DETAILS")
 public class UserDetails {
 	
+/* This is option to keep annotation on declaration or it can place on getter also */	
 	@Id
+//	@Column(name="USER_ID")
 	private int userId;
+//	@Column(name="USER_NAME")
 	private String userName;
 	public int getUserId() {
 		return userId;

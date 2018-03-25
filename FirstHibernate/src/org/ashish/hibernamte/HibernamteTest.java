@@ -21,6 +21,16 @@ public class HibernamteTest {
 		session.save(user1);
 		session.save(user2);
 		session.getTransaction().commit();
+		session.close();
+		
+		user1 = null;
+		session = sessionFactory.openSession();
+		session.beginTransaction();
+		user1 = (UserDetails) session.get(UserDetails.class, 1);
+		System.out.println("User Details " +user1.getUserName());
+		
+		
+		
 	}
 
 }
